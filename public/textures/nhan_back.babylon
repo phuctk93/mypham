@@ -1,0 +1,18 @@
+{"producer":{"name":"Blender","version":"2.79 (sub 0)","exporter_version":"5.6.2","file":"nhan_back.babylon"},
+"autoClear":true,"clearColor":[0.0509,0.0509,0.0509],"ambientColor":[0,0,0],"gravity":[0,-9.81,0],
+"materials":[],
+"multiMaterials":[],
+"skeletons":[],
+"meshes":[{"name":"nhan_back","id":"nhan_back","billboardMode":0,"position":[0,0,0.01],"rotation":[0,0,0],"scaling":[1,1,1],"isVisible":true,"freezeWorldMatrix":false,"isEnabled":true,"checkCollisions":false,"receiveShadows":false,"pickable":true,"tags":""
+,"positions":[-0.1951,0.8054,0.9808,0,0.2333,1,-0.1951,0.2333,0.9808,-0.3827,0.8054,0.9239,-0.3827,0.2333,0.9239,-0.5556,0.8054,0.8315,-0.5556,0.2333,0.8315,0.3827,0.8054,0.9239,0.5556,0.2333,0.8315,0.3827,0.2333,0.9239,0.1951,0.8054,0.9808,0.1951,0.2333,0.9808,0,0.8054,1,0.5556,0.8054,0.8315]
+,"normals":[-0.195,0,0.981,0,0,1,-0.195,0,0.981,-0.383,0,0.924,-0.383,0,0.924,-0.471,0,0.882,-0.471,0,0.882,0.383,0,0.924,0.471,0,0.882,0.383,0,0.924,0.195,0,0.981,0.195,0,0.981,0,0,1,0.471,0,0.882]
+,"uvs":[0.604,0.96,0.501,0.66,0.604,0.66,0.707,0.96,0.707,0.66,0.809,0.96,0.809,0.66,0.295,0.96,0.192,0.66,0.295,0.66,0.398,0.96,0.398,0.66,0.501,0.96,0.192,0.96]
+,"indices":[0,1,2,3,2,4,5,4,6,7,8,9,10,9,11,12,11,1,0,12,1,3,0,2,5,3,4,7,13,8,10,7,9,12,10,11]
+,"subMeshes":[{"materialIndex":0,"verticesStart":0,"verticesCount":14,"indexStart":0,"indexCount":36}]
+,"instances":[]}
+],
+"morphTargetManagers":[],
+"cameras":[],
+"lights":[],
+"shadowGenerators":[]
+}
