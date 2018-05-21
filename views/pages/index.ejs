@@ -47,7 +47,7 @@
             var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 5, BABYLON.Vector3.Zero(), scene);
             camera.attachControl(canvas, true);
             camera.wheelDeltaPercentage = 0.01;
-            camera.pinchDeltaPercentage = 0.01;
+            camera.pinchDeltaPercentage = 0.001;
             
             // Environment Texture
             var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("textures/environment.dds", scene);
