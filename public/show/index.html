@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <title>Default .babylon loading scene</title>
+    <meta charset="UTF-8">
+    <!-- this link to the preview online version of BJS -->
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <!-- this is needed for BJS to load scene files -->
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: OpenSans, tahoma, arial, sans-serif;
+            color:white;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var engine = new BABYLON.Engine(canvas, true);
+
+        // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
+        BABYLON.SceneLoader.Load("", "blend.babylon", engine, function (scene) {
+
+            //as this .babylon example hasn't camera in it, we have to create one
+            var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);
+            camera.attachControl(canvas, false);
+
+            scene.clearColor = new BABYLON.Color3(0.8, 0.8, 0.8);
+            scene.ambientColor = new BABYLON.Color3.White;
+
+            var ssao = new BABYLON.SSAORenderingPipeline('ssaopipeline', scene, 0.75);
+            var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("environment.dds", scene);
+
+            // Skybox
+            var hdrSkybox = BABYLON.Mesh.CreateBox("hdrSkyBox", 1000.0, scene);
+            var hdrSkyboxMaterial = new BABYLON.PBRMaterial("skyBox", scene);
+            hdrSkyboxMaterial.backFaceCulling = false;
+            hdrSkyboxMaterial.reflectionTexture = hdrTexture.clone();
+            hdrSkyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+        	hdrSkyboxMaterial.microSurface = 1.0;
+            hdrSkyboxMaterial.disableLighting = true;
+            hdrSkybox.material = hdrSkyboxMaterial;
+            hdrSkybox.infiniteDistance = true;
+
+            engine.runRenderLoop(function() {
+                scene.render();
+            });
+
+            window.addEventListener("resize", function () {
+                engine.resize();
+            });
+        });
+    </script>
+</body>
+</html>
